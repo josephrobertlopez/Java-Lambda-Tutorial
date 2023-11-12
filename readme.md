@@ -29,5 +29,31 @@ sam local start-api
 
 6) Hit lambda on localhost with
 ```Bash
-sam local start-apisam local start-api
+sam local start-api
+```
+7) Init acceptance test folder
+```Bash
+mvn archetype:generate -DgroupId=com.helloworld.acceptancetest -DartifactId=CucumberTests -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+
+8) Add the following dependencies into the new pom
+```Xml
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.0.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>7.0.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>gherkin</artifactId>
+        <version>2.12.2</version>
+        <scope>provided</scope>
+    </dependency>
 ```
